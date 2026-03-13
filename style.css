@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "helvetica";
+    font-weight: 100;
+    src: url(fonts/helvetica-oblique.woff); format ("woff") ;
+}
+
+@font-face {
+    font-family: "helvetica";
+    font-weight: 200;
+    src: url(fonts/helvetica-bold-oblique.woff); format ("woff") ;
+}
+
+
+h1 { 
+    font-family: "helvetica";
+      font-weight: 200;
+    margin: 0;
+    text-align: center;
+    height: 100vh;        /* גובה כל המסך */
+    display: flex;
+    justify-content: center; /* מרכז ימין-שמאל */
+    align-items: center; 
+    font-size: 150px;
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    z-index: -1;
+}
+
+.bottom-menu {
+    font-family: "helvetica";
+      font-weight: 100;
+    position: fixed;
+    bottom: 30px;          /* מרחק מהתחתית */
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 40px;             /* רווח בין הפריטים */
+}
+
+.bottom-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+h2 {
+     font-family: "helvetica";
+    font-size: small;
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 50px;
+}
+
+.english {
+    direction: ltr;
+    text-align: left;
+}
+
+.contact-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "helvetica";
+    font-weight: 100;
+}
+
+.red-underline {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+}
+
+a {
+    color: black;
+}
+
+.active {
+    font-weight: bold;   /* מודגש */
+    color: red;          /* אופציונלי */
+}
+
+.home-dot {
+    /* מיקום */
+    position: fixed;        /* נשאר במקום גם כשגוללים */
+    top: 60px;              /* 20px מהחלק העליון */
+    right: 40px;            /* 20px מהצד הימני */
+    
+    /* מימדים וצורה */
+    width: 20px;            /* רוחב הנקודה */
+    height: 20px;           /* גובה הנקודה */
+    background-color: black;/* צבע הנקודה */
+    border-radius: 50%;     /* הופך את הצורה לעיגול */
+    
+    /* אינטראקטיביות */
+    cursor: pointer;        /* סמן שמראה שניתן ללחוץ */
+    
+    /* שכבתיות */
+    z-index: 1000;          /* תמיד מעל התוכן */
+}
+
+/* הגדרות לשפה אנגלית */
+.en {
+    direction: ltr;       /* שמאל-לימין */
+    text-align: left;     /* מתחיל משמאל */
+}
+
+/* רשימה ללא נקודות */
+.category-list {
+    list-style-type: none; /* מסיר נקודות */
+    padding: 0;            /* מסיר מרווח פנימי */
+    margin: 0;             /* מסיר מרווח חיצוני */
+}
+
+.category-list li {
+    font-size: 20px;       /* גודל טקסט */
+    margin-bottom: 10px;   /* רווח בין פריטים */
+    font-family: "helvetica";
+    font-weight: 100;
+    font-size: 40px;
+   margin-left: 40px; 
+}
