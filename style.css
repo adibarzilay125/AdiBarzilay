@@ -130,3 +130,32 @@ a {
     font-size: 40px;
    margin-left: 40px; 
 }
+
+.category-list a {
+    text-decoration: none; /* מסיר את הקו */
+    color: black;          /* מחזיר את הצבע לשחור אם הוא כחול */
+}
+
+.image-row {
+    display: flex;          /* מסדר את התמונות בשורה */
+    justify-content: center; /* מרכז את השורה */
+    gap: 100px;              /* רווח בין התמונות */
+
+    overflow-x: auto;       /* מאפשר גלילה אופקית */
+    padding: 20px;
+
+    margin-top: 160px;
+}
+
+.image-row img {
+    height: 250px;          /* גובה אחיד לתמונות */
+    flex-shrink: 0;         /* מונע מהתמונות להצטמצם */
+}
+.image-row::-webkit-scrollbar {
+    display: none;
+}
+
+.image-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
