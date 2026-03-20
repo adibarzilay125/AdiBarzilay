@@ -11,9 +11,11 @@
 }
 
 
+
+
 h1 { 
     font-family: "helvetica";
-      font-weight: 200;
+      font-weight: 100;
     margin: 0;
     text-align: center;
     height: 100vh;        /* גובה כל המסך */
@@ -23,33 +25,40 @@ h1 {
     font-size: 150px;
 }
 
+/* איפוס בסיסי */
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* וידאו כרקע */
 #bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    min-width: 100%;
-    min-height: 100%;
-
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
-.bottom-menu {
-    font-family: "helvetica";
-      font-weight: 100;
-    position: fixed;
-    bottom: 30px;          /* מרחק מהתחתית */
-    left: 50%;
-    transform: translateX(-50%);
+/* שכבה כהה לקריאות */
 
-    display: flex;
-    gap: 40px;             /* רווח בין הפריטים */
+
+/* תוכן באמצע */
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.bottom-menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
+/* כותרת */
+h1 {
+  font-size: clamp(90px, 6vw, 80px);
+  color: rgb(0, 0, 0);
+  margin-bottom: 40px;
 }
 
 h2 {
@@ -138,27 +147,47 @@ a {
 }
 
 .image-row {
-    display: flex;          /* מסדר את התמונות בשורה */
-    justify-content: center; /* מרכז את השורה */
-    gap: 100px;              /* רווח בין התמונות */
+  display: flex;
+  justify-content: center;
+  gap: 100px;
 
-    overflow-x: auto;       /* מאפשר גלילה אופקית */
-    padding: 20px;
-
-    margin-top: 160px;
+  overflow-x: auto;
+  padding: 20px;
+  margin-top: 160px;
 }
 
 .image-row img {
-    height: 250px;          /* גובה אחיד לתמונות */
-    flex-shrink: 0;         /* מונע מהתמונות להצטמצם */
-}
-.image-row::-webkit-scrollbar {
-    display: none;
+  height: 250px;
+  flex-shrink: 0;
 }
 
+/* הסתרת scrollbar */
+.image-row::-webkit-scrollbar {
+  display: none;
+}
 .image-row {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+@media (max-width: 600px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    overflow-x: hidden;
+
+    margin-top: 40px; /* במקום 160px */
+  }
+
+  .image-row img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 }
 
 .abba01 {
@@ -200,7 +229,160 @@ font-weight: 100;
 font-size: 20px;
 }
 
+.about {
+  max-width: 120ch;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about h4 {
+  margin: 0;
+}
+
+/* מובייל */
+@media (max-width: 600px) {
+  .about {
+    padding: 0 16px;
+    max-width: 80%;
+  }
+
+  .about h4 {
+    font-size: 30px;   /* הקטנה עדינה */
+    line-height: 1.5;  /* לשמירה על קריאות */
+  }
+}
+.bottom-menu {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 24px;
+  white-space: nowrap;
+
+  background: white;       /* רקע */
+  padding: 10px 18px;      /* ריווח פנימי */
+  border-radius: 20px;     /* פינה עגולה */
+  z-index: 1000;           /* מעל הכל */
+}
+
+.bottom-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: clamp(14px, 2vw, 18px);
+  transition: opacity 0.3s;
+}
+
+.bottom-menu a:hover {
+  opacity: 0.6;
+}
+
+/* מובייל */
+@media (max-width: 600px) {
+  .bottom-menu {
+    gap: 16px;
+    bottom: 15px;
+  }
+
+  .bottom-menu a {
+    font-size: 14px;
+  }
+}
+
+/* שלא ייכנס תוכן מתחת */
+body {
+  padding-bottom: 100px;
+}
+
+
+h4 {
+    font-family: "helvetica";
+        font-weight: 100;
+
+    font-size: 40px;
+}
+
+.video {
+        text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+
+}
+
 .project-text {
-    margin-top: 60px;
+    margin-top: 0px;
       max-width: 800px;
+
+      
+}
+/* ===== IMAGE + TEXT SECTION ===== */
+
+.poster {
+  width: 90%;
+  max-width: 100px;
+  display: block;
+  margin: 0 auto; /* 👈 מרכז אמיתי */
+}
+
+.poster:hover {
+  transform: scale(1.1);
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+  
+}
+
+/* טקסט */
+.project-text h3 {
+  margin-bottom: 10px;
+}
+
+.project-text .paragraph {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  max-width: 75ch; /* רחב יותר */
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+  .image-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .poster {
+    width: 90%;
+    max-width: 100px;
+    margin-right: auto; /* 👈 דוחף לשמאל */
+    
+
+  }
+
+  .project-text {
+    width: 600%;
+    max-width: 400px;
+    text-align: center; /* חשוב לקריאות */
+        margin-right: 100px;
+
+  }
+
+  .project-text h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .project-text .paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: none; /* שלא יגביל במובייל */
+  }
 }
