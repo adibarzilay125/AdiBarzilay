@@ -70,7 +70,9 @@ h2 {
     padding-top: 5px ;
 }
 
+
 .english {
+  
     direction: ltr;
     text-align: left;
     
@@ -220,15 +222,7 @@ a {
   margin-left: 200px;
   margin-right: 100px;
     text-align: left;
-      z-index: -2;
 
-}
-@media (max-width: 600px) {
-  .image-text {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 16px;
-  }
 }
 
 .image-text img {
@@ -305,21 +299,11 @@ font-size: 20px;
 
 /* מובייל */
 @media (max-width: 600px) {
-  .bottom-menu {
-    gap: 16px;
-    bottom: 15px;
-  }
 
   .bottom-menu a {
     font-size: 18px;
   }
 }
-
-/* שלא ייכנס תוכן מתחת */
-body {
-  padding-bottom: 100px;
-}
-
 
 h4 {
     font-family: "helvetica";
@@ -335,20 +319,12 @@ h4 {
 
 }
 
-.project-text {
-    margin-top: 0px;
-      max-width: 800px;
-
-      
-}
-
 /* ===== DESKTOP ===== */
 .image-text {
     display: flex;
     flex-direction: row; /* 👈 אחד ליד השני */
     align-items: center;
     justify-content: center; /* 👈 מרכז את כל הבלוק */
-    gap: 80px;
 }
 
 /* תמונה */
@@ -358,50 +334,42 @@ h4 {
     display: block;
 }
 
-/* טקסט */
-.project-text {
-    max-width: 710px;
-}
-
-/* ===== MOBILE ===== */
 @media (max-width: 600px) {
-    .image-text {
-        transform: translateY(-50px); /* מוריד 10px למעלה */
-    }
-}
-@media (max-width: 600px) {
-    .image-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;     /* מרכז אנכי */
-        justify-content: flex-start; /* למעלה */
-        gap: 15px;               /* רווח בין התמונה לטקסט */
-        width: 100%;             /* חובה, כדי שהקונטיינר יתפוס כל רוחב המסך */
-    padding-top: 0;   /* אין רווח מיותר */
-        margin-top: 0;   
-   
-      }
 
-    .poster {
-        display: block;          /* חובה למרכז margin auto */
-        width: 80px;             /* קטן למובייל */
-        max-width: 100%;         /* לא יחרוג מהקונטיינר */
-        margin: 0 auto;          /* מרכז אופקי מוחלט */
-    }
+  body.no-scroll-mobile {
+    overflow: hidden;
+    height: 100vh;
+  }
 
-    .project-text {
-        max-width: 300px;
-        margin: 0 auto;
-        text-align: left;        /* שורות הטקסט מתחילות משמאל */
-padding-right: 10%;  
-    }
-  
 
-    .project-text h3 {
-        font-size: clamp(16px, 5vw, 22px);
-    }
+  .image-text {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 12px;
+    gap: 12px;
+  }
 
-    .project-text .paragraph {
-        font-size: clamp(12px, 4vw, 18px);
-    }
+  .image-text img {
+    margin-top: 50px;    /* ← זה הכי חשוב */
+    margin-right: 0;
+    width: 300px;
+  }
+
+  .project-text {
+    max-width: 90%;
+    margin: 40px;
+    padding: 0 12px 80px 12px; /* 80px בתחתית בגלל התפריט */
+  }
+
+  .project-text h3 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  .project-text .paragraph {
+    font-size: 14px;
+    margin-top: 8px;
+  }
 }
