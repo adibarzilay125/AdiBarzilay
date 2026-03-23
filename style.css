@@ -336,10 +336,7 @@ h4 {
 
 @media (max-width: 600px) {
 
-  body.no-scroll-mobile {
-    overflow: hidden;
-    height: 100vh;
-  }
+  
 
 
   .image-text {
