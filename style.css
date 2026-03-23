@@ -56,7 +56,7 @@ body {
 
 /* כותרת */
 h1 {
-  font-size: clamp(90px, 6vw, 80px);
+  font-size: clamp(70px, 6vw, 80px);
   color: rgb(0, 0, 0);
   margin-bottom: 40px;
 }
@@ -220,6 +220,8 @@ a {
   margin-left: 200px;
   margin-right: 100px;
     text-align: left;
+      z-index: -2;
+
 }
 @media (max-width: 600px) {
   .image-text {
@@ -247,9 +249,12 @@ font-size: 20px;
 }
 
 .about {
-  max-width: 120ch;
-  margin: 0 auto;
-  text-align: left;
+  max-width: 1000px;      /* רוחב מקסימלי לקריאה נוחה */
+  margin: 0 auto;        /* מרכז את הקונטיינר בעמוד */
+  text-align: left;      /* השורות עצמן מיושרות לשמאל */
+  padding: 20px;         /* מרווח פנימי קטן מהקצה */
+  line-height: 1.6;      /* שורה נוחה לקריאה */
+  font-size: 18px;       /* גודל פונט קריא */
 }
 
 .about h4 {
@@ -343,7 +348,7 @@ h4 {
     flex-direction: row; /* 👈 אחד ליד השני */
     align-items: center;
     justify-content: center; /* 👈 מרכז את כל הבלוק */
-    gap: 30px;
+    gap: 80px;
 }
 
 /* תמונה */
@@ -355,42 +360,48 @@ h4 {
 
 /* טקסט */
 .project-text {
-    max-width: 600px;
+    max-width: 710px;
 }
+
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-
     .image-text {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-                        padding-left: 60px;
-
+        transform: translateY(-50px); /* מוריד 10px למעלה */
     }
+}
+@media (max-width: 600px) {
+    .image-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;     /* מרכז אנכי */
+        justify-content: flex-start; /* למעלה */
+        gap: 15px;               /* רווח בין התמונה לטקסט */
+        width: 100%;             /* חובה, כדי שהקונטיינר יתפוס כל רוחב המסך */
+    padding-top: 0;   /* אין רווח מיותר */
+        margin-top: 0;   
+   
+      }
 
     .poster {
-        width: 90%;
-        max-width: 400px;
-        margin: 0 auto;
+        display: block;          /* חובה למרכז margin auto */
+        width: 80px;             /* קטן למובייל */
+        max-width: 100%;         /* לא יחרוג מהקונטיינר */
+        margin: 0 auto;          /* מרכז אופקי מוחלט */
     }
 
     .project-text {
-        width: 108%;
+        max-width: 300px;
         margin: 0 auto;
+        text-align: left;        /* שורות הטקסט מתחילות משמאל */
+padding-right: 10%;  
     }
+  
 
-    /* 👇 שליטה על פונטים */
     .project-text h3 {
         font-size: clamp(16px, 5vw, 22px);
-        text-align: center;
-        padding-right: 30px;
-
-
     }
 
     .project-text .paragraph {
         font-size: clamp(12px, 4vw, 18px);
-        text-align: center;
-        padding-right: 30px;
     }
 }
