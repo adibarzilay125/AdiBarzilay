@@ -263,7 +263,7 @@ font-size: 20px;
   }
 
   .about h4 {
-    font-size: 30px;   /* הקטנה עדינה */
+    font-size: 26px;   /* הקטנה עדינה */
     line-height: 1.5;  /* לשמירה על קריאות */
   }
 }
@@ -362,7 +362,7 @@ h4 {
 
   .project-text h3 {
     margin-top: 0;
-    font-size: 16px;
+    font-size: 16px;,
   }
 
   .project-text .paragraph {
