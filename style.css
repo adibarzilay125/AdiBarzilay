@@ -125,6 +125,15 @@ h2 {
     font-weight: 200;
 }
 
+@media (max-width: 600px) {
+  .contact-text {
+    width: 90%;              /* שלא ייצמד לקצוות */
+    padding: 0 16px;         /* מרווח פנימי */
+    font-size: 16px;         /* טקסט קטן יותר */
+    line-height: 1.5;        /* יותר קריא */
+  }
+}
+
 .red-underline {
     text-decoration: underline;
     text-decoration-style: wavy;
@@ -231,10 +240,9 @@ margin-left: 38px;
     align-items: center;
     justify-content: center;
     gap: 40px;
-
     overflow-x: hidden;
-
     margin-top: 40px; /* במקום 160px */
+    margin-bottom: 40px;
   }
 
   .image-row img {
@@ -306,7 +314,7 @@ font-size: 20px;
   }
 
   .about h4 {
-    font-size: 26px;   /* הקטנה עדינה */
+    font-size: 22px;   /* הקטנה עדינה */
     line-height: 1.5;  /* לשמירה על קריאות */
   }
 }
