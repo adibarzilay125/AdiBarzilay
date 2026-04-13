@@ -10,6 +10,18 @@
     src: url(fonts/helvetica-bold-oblique.woff); format ("woff") ;
 }
 
+@font-face {
+    font-family: "terminal";
+    font-weight: 100;
+    src: url(fonts/terminal.woff2); format ("woff") ;
+}
+
+@font-face {
+    font-family: "terminal2";
+    font-weight: 200;
+
+    src: url(fonts/terminal2.woff2); format ("woff") ;
+}
 
 body {
     margin: 0;
@@ -23,6 +35,21 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+}
+
+.welcome-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1500px; /* תשני לפי מה שנראה לך */
+}
+
+@media (max-width: 600px) {
+  .welcome-gif {
+    width: 90vw;
+    max-width: 500px;
+  }
 }
 
 .content {
@@ -72,7 +99,7 @@ h1 {
 }
 
 h2 {
-    font-family: "helvetica";
+    font-family: "terminal";
     margin-top: 40px;
     margin-left: 40px;
 
@@ -94,8 +121,8 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family: "helvetica";
-    font-weight: 100;
+    font-family: "terminal2";
+    font-weight: 200;
 }
 
 .red-underline {
@@ -146,8 +173,8 @@ a {
 
 /* פריטים בתפריט */
 .category-list li {
-    font-family: "helvetica";
-    font-weight: 100;
+    font-family: "terminal";
+    font-weight: 200;
 
     font-size: clamp(30px, 5vw, 40px); /* רספונסיבי */
     margin-bottom: clamp(8px, 2vw, 16px);
@@ -162,10 +189,14 @@ margin-left: 38px;
     color: black;
 }
 
-/* אפקט קטן */
+.category-list a {
+    transition: 0.3s;
+}
+
 .category-list a:hover {
     opacity: 0.6;
-    transition: 0.3s;
+  color: rgb(0, 34, 255);                 /* שינוי צבע טקסט */
+    transform: scale(1.05); /* הגדלה עדינה */
 }
 
 .image-row {
@@ -243,26 +274,27 @@ a {
 }
 
 h3{
-    font-family: "helvetica";
+    font-family: "terminal2";
     font-size: 20px;
 }
 
 .paragraph {
-font-family: "helvetica";
+font-family: "terminal";
 font-weight: 100;
 font-size: 20px;
 }
 
 .about {
-  max-width: 1000px;      /* רוחב מקסימלי לקריאה נוחה */
-  margin: 0 auto;        /* מרכז את הקונטיינר בעמוד */
-  text-align: left;      /* השורות עצמן מיושרות לשמאל */
-  padding: 20px;         /* מרווח פנימי קטן מהקצה */
-  line-height: 1.6;      /* שורה נוחה לקריאה */
-  font-size: 18px;       /* גודל פונט קריא */
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 18px;
 }
 
 .about h4 {
+  font-family: "terminal2";
   margin: 0;
 }
 
@@ -278,10 +310,10 @@ font-size: 20px;
     line-height: 1.5;  /* לשמירה על קריאות */
   }
 }
-.bottom-menu {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 100;
 
+.bottom-menu {
+  font-family:terminal;
+  font-weight: 100;
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -306,6 +338,11 @@ font-size: 20px;
 
 .bottom-menu a:hover {
   opacity: 0.6;
+}
+.bottom-menu a:hover {
+  opacity: 0.6;
+  color: rgb(0, 34, 255);                 /* שינוי צבע טקסט */
+  transform: scale(1.1);       /* הגדלה קטנה */
 }
 
 /* מובייל */
